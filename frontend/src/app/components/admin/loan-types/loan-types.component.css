@@ -1,0 +1,42 @@
+/* Global view or desktop view */
+.table-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.loan-types-sl-no-col {
+  width: 5%;
+}
+
+.loan-types-col {
+  width: 75%;
+}
+.action-col {
+  width: 20%;
+}
+
+.loan-types-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loan-desc-cell {
+  font-weight: 500;
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .table-content {
+    margin-top: 50px;
+  }
+}
+/* Mobile view */
+@media (max-width: 500px) {
+  .table-content {
+    margin-top: 50px;
+  }
+  .delete-button {
+    margin-top: 10px;
+  }
+}

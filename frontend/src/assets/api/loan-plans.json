@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "plan": 3,
+    "interest": 8,
+    "penalty": 3
+  },
+  {
+    "id": 2,
+    "plan": 2,
+    "interest": 5,
+    "penalty": 2
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Personal Loan",
+    "description": "Get Hassle free disbursement in your account. Apply anytime, anywhere."
+  },
+  {
+    "id": 2,
+    "name": "Gold Loan",
+    "description": "Avail the best interest rates for your gold, with ease."
+  },
+  {
+    "id": 3,
+    "name": "Mortgage Loan",
+    "description": "A plan that ensure your property fuels your journey to prosperity."
+  },
+  {
+    "id": 4,
+    "name": "Home Loan",
+    "description": "A wide range of home loans to provide the best-suited plan for you."
+  },
+  {
+    "id": 5,
+    "name": "Vehicle Loan",
+    "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nesciunt."
+  },
+  {
+    "id": 6,
+    "name": "Education Loan",
+    "description": "The stepping stone to your dreams, backed by a convenient financial plan"
+  }
+]

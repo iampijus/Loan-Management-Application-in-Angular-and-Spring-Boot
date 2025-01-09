@@ -1,0 +1,53 @@
+.table-container{
+    max-height: 80vh;
+    overflow-y: auto;
+    
+}
+.create-loan-button{
+    background-color: rgb(25, 98, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 3px 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.create-loan-button span{
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.address{
+    font-weight: 500;
+}
+.loan-status{
+    color: white;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.approved-class {
+    background-color: green;
+}
+
+.released-class {
+    background-color: rgb(25, 154, 246);
+}
+
+.denied-class {
+    background-color: red;
+}
+
+
+.payble{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.payble-amount{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(25, 154, 246);
+}

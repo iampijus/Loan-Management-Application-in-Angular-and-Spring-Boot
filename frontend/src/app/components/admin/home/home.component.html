@@ -1,0 +1,29 @@
+<!-- Small device -->
+<div class="small-device-nav-container">
+  <ul class="small-device-nav">
+    <li class="me-3" *ngFor="let route of menu">
+      <a routerLink="{{ route.path }}" routerLinkActive="active">{{ route.text }}</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Laptop or desktop view -->
+<div class="row w-100">
+  <div class="col-lg-2 col-md-3 col-4 side-nav-container">
+    <div class="side-nav">
+      <ul>
+        <li class="mt-3 fw-semibold" *ngFor="let route of menu">
+          <a routerLink="{{ route.path }}" routerLinkActive="active">{{
+            route.text
+          }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-10 col-md-9 col-8 side-content-container">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

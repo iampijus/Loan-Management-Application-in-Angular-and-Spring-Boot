@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "email": "Sincere@april.biz",
+    "contact": "9842635975",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874"
+    },
+    "loanDetails": {
+      "type": "Small Business",
+      "plan": "36 months",
+      "amount": 100000
+    },
+    "paymentDetails": {
+      "payable": 108000,
+      "penalty": 3000,
+      "date": "Mar 11, 2024"
+    },
+    "status": "Released"
+  },
+  {
+    "id": 2,
+    "name": "Leanne Graham",
+    "email": "Sincere@april.biz",
+    "contact": "9842635975",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874"
+    },
+    "loanDetails": {
+      "type": "Small Business",
+      "plan": "36 months",
+      "amount": 100000
+    },
+    "payableDetails": {
+      "payable": 108000,
+      "penalty": 3000,
+      "date": "Mar 11, 2024"
+    },
+    "status": "Released"
+  }
+]

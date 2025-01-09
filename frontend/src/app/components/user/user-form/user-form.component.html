@@ -1,0 +1,262 @@
+<h5 class="mt-3 text-center fw-bold">{{ formTitle }}</h5>
+<div class="form-container w-75 mx-auto mt-3">
+  <form [formGroup]="applicationForm" (ngSubmit)="handleApplicationSubmit()">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            Personal Details
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Name"
+                />
+                <p class="err-msg" *ngIf="name && name.invalid && name.touched">
+                  Name is required
+                </p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  formControlName="email"
+                  placeholder="Email"
+                />
+                <p
+                  class="err-msg"
+                  *ngIf="email && email.invalid && email.touched"
+                >
+                  Email is required
+                </p>
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="tel"
+                  id="contact"
+                  class="form-control"
+                  formControlName="contact"
+                  placeholder="Mobile number"
+                />
+                <p
+                  class="err-msg"
+                  *ngIf="contact && contact.invalid && contact.touched"
+                >
+                  Mobile is required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo"
+          >
+            Address
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseTwo"
+          class="accordion-collapse collapse"
+        >
+          <div class="accordion-body">
+            <div class="row" formGroupName="address">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="city"
+                  class="form-control"
+                  formControlName="city"
+                  placeholder="City"
+                />
+                <p class="err-msg" *ngIf="city && city.invalid && city.touched">
+                  City is required
+                </p>
+              </div>
+              <div class="col-md-6 mb-3 mb-3">
+                <input
+                  type="text"
+                  id="state"
+                  class="form-control"
+                  formControlName="state"
+                  placeholder="State"
+                />
+                <p
+                  class="err-msg"
+                  *ngIf="state && state.invalid && state.touched"
+                >
+                  State is required
+                </p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input
+                  type="text"
+                  id="country"
+                  class="form-control"
+                  formControlName="country"
+                  placeholder="Country"
+                />
+                <p
+                  class="err-msg"
+                  *ngIf="country && country.invalid && country.touched"
+                >
+                  Country is required
+                </p>
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  id="pin"
+                  class="form-control"
+                  formControlName="pin"
+                  placeholder="PIN"
+                />
+                <p class="err-msg" *ngIf="pin && pin.invalid && pin.touched">
+                  PIN is required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree"
+          >
+            Loan Details
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseThree"
+          class="accordion-collapse collapse"
+        >
+          <div class="accordion-body">
+            <div class="row" formGroupName="loanDetails">
+              <div class="col-md-6 mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+                  <input
+                    type="number"
+                    id="amount"
+                    class="form-control"
+                    formControlName="amount"
+                    placeholder="Amount"
+                  />
+                </div>
+
+                <p
+                  class="err-msg"
+                  *ngIf="amount && amount.invalid && amount.touched"
+                >
+                  Loan amount is required
+                </p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <select
+                  id="plan"
+                  class="form-select"
+                  formControlName="plan"
+                  (change)="
+                    getLoanPlanById(
+                      applicationForm.get('loanDetails.plan')?.value
+                    )
+                  "
+                >
+                  <option value="" disabled>Select</option>
+                  <option [value]="item.id" *ngFor="let item of loanPlans">
+                    {{ item.plan }} Years
+                  </option>
+                </select>
+                <p class="err-msg" *ngIf="plan && plan.invalid && plan.touched">
+                  Loan Plan is required
+                </p>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="input-group">
+                  <input
+                    type="number"
+                    id="interest"
+                    class="form-control"
+                    placeholder="Interest"
+                    [value]="selected_loanplan?.interest"
+                    disabled
+                  />
+                  <span class="input-group-text">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseFour"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseFour"
+          >
+            Upload Document
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseFour"
+          class="accordion-collapse collapse"
+        >
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Pan Card</label>
+                <br />
+                <input
+                  type="file"
+                  id="pan"
+                  class="mt-2"
+                  accept=".pdf,.jpg,.jpeg"
+                  name="pan"
+                  (change)="onFileChange($event)"
+                  formControlName="document"
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "type": "Small Business",
+    "description": "Small Business Loans"
+  },
+  {
+    "id": 2,
+    "type": "Personal Loans",
+    "description": "Personal Loans"
+  }
+]

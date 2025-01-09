@@ -1,0 +1,93 @@
+<div class="mt-4">
+  <h6 class="mb-3">Borrowers List</h6>
+  <div class="table-responsive table-container">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Borrower</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Type</th>
+          <th scope="col">Cibil Score</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of loanRequests; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.name }}</td>
+          <td>₹ {{ item.loanDetails.amount }}</td>
+          <td>{{ item.loanDetails.type }}</td>
+          <td>
+            <button
+              class="btn btn-sm btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="handleCreditScore(item.id)"
+            >
+              Check
+            </button>
+          </td>
+
+          <td>
+            <div *ngIf="item.status == 'Pending'; else elseBlock">
+              <button
+                class="btn btn-sm btn-success me-2"
+                (click)="handleApprove(item.id)"
+              >
+                Approve
+              </button>
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="handleReject(item.id)"
+              >
+                Reject
+              </button>
+            </div>
+            <ng-template #elseBlock>
+              <span
+                class="status-msg"
+                [ngClass]="{
+                  'text-success': item.status === 'Approved',
+                  'text-danger': item.status === 'Rejected'
+                }"
+                >{{ item.status }}</span
+              >
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Cibil Score check -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">CIBIL Score</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center">{{ score }}</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

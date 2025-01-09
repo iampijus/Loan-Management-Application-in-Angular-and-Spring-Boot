@@ -1,0 +1,20 @@
+.banner{
+    margin:10px 20px;
+}
+.banner-img {
+  height: 360px;
+  width: 100vw;
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.loan-title{
+  color: rgb(13, 74, 143);
+}
+.apply-button{
+  padding: 0 25px;
+  border-radius: 20px;
+}

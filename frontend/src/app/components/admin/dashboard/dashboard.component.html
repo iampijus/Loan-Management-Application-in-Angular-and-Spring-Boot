@@ -1,0 +1,32 @@
+<div class="card rounded shadow-lg border-0 p-4 mt-5">
+  <h6 class="mb-5 welcome-msg">Welcome back Administrator!</h6>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 dashboard-card">
+      <div class="card bg-primary">
+        <div class="card-body">
+          <h6 class="card-title">Payments Today</h6>
+          <p>₹ 0.00</p>
+          <a routerLink="#" class="btn btn-dark">View Payments</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 dashboard-card">
+      <div class="card card-borrowers">
+        <div class="card-body">
+          <h6 class="card-title">Borrowers</h6>
+          <p>2</p>
+          <a routerLink="/borrowers" class="btn btn-dark">View Borrowers</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 dashboard-card" id="total-receivable">
+      <div class="card bg-warning">
+        <div class="card-body">
+          <h6 class="card-title">Total Receivable</h6>
+          <p>₹ {{ totalReceivable | number : "1.2-2" }}</p>
+          <a routerLink="/loans" class="btn btn-dark">View Loan List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

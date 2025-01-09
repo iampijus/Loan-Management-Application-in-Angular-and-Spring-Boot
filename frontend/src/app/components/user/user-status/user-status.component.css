@@ -1,0 +1,12 @@
+.loan-status-container {
+  margin: 40px 50px;
+}
+
+.ag-theme-alpine {
+  --ag-border-color: rgb(199, 199, 199);
+}
+
+.my-header-class {
+  font-weight: bold;
+  font-size: 20px;
+}

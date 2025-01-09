@@ -1,0 +1,123 @@
+<div class="row mt-4">
+  <!-- Form content -->
+  <div class="card p-4 col-lg-4 col-md-3">
+    <h6 class="mb-4">Loan Type Form</h6>
+    <form (ngSubmit)="handleSubmit()">
+      <div class="form-group">
+        <label>Type</label>
+        <input
+          type="text"
+          class="form-control"
+          id="type"
+          [(ngModel)]="loan_type.type"
+          name="type"
+        />
+      </div>
+
+      <div class="mt-3">
+        <label>Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          [(ngModel)]="loan_type.description"
+          name="description"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Save</button>
+    </form>
+  </div>
+
+  <!-- Table content -->
+  <div class="col-lg-8 col-md-9 table-content">
+    <table class="table table-bordered" style="table-layout: fixed">
+      <thead>
+        <tr>
+          <th scope="col" class="loan-type-sl-no-col">#</th>
+          <th scope="col" class="loan-types-col">Loan Types</th>
+          <th scope="col" class="action-col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of loanTypes; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td class="loan-types-cell">
+            <span
+              >Type Name: <b>{{ item.type }}</b></span
+            >
+            <br />
+            <span 
+              >Description: <span class="loan-desc-cell">{{ item.description }}</span></span
+            >
+          </td>
+          <td>
+            <button
+              class="btn btn-sm btn-primary me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="editLoanType(item.id)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-danger delete-button"
+              (click)="handleDelete(item.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Loan Type</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="type"
+            [(ngModel)]="updated_loan_type.type"
+          />
+        </div>
+
+        <div class="mt-3">
+          <label>Description</label>
+          <textarea
+            class="form-control"
+            name="description"
+            [(ngModel)]="updated_loan_type.description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="handleUpdate()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="login-container">
+  <div class="login-form">
+    <h3>Login</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+      <div class="input-field">
+        <input type="email" placeholder="Username" formControlName="email" />
+        <p class="err-msg" *ngIf="email && email.invalid && email.touched">
+          Please enter username
+        </p>
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <p
+          class="err-msg"
+          *ngIf="password && password.invalid && password.touched"
+        >
+          Please enter password
+        </p>
+      </div>
+      <div>
+        <button
+          class="btn btn-secondary login-button"
+          [attr.disabled]="loginForm.invalid ? true : null"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+    <div class="member">
+      Not registered ?
+      <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Register Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog register-container">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body register-form">
+        <h3>Register</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+          <div class="register-input-field">
+            <input type="name" placeholder="Name" formControlName="name" />
+            <p
+              class="err-msg"
+              *ngIf="r_name && r_name.invalid && r_name.touched"
+            >
+              Name is required
+            </p>
+            <input type="email" placeholder="Email" formControlName="email" />
+            <p
+              class="err-msg"
+              *ngIf="r_email && r_email.invalid && r_email.touched"
+            >
+              Email is required
+            </p>
+            <input type="tel" placeholder="Mobile" formControlName="contact" />
+            <p
+              class="err-msg"
+              *ngIf="r_contact && r_contact.invalid && r_contact.touched"
+            >
+              Mobile is required
+            </p>
+            <input
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+            />
+            <p
+              class="err-msg"
+              *ngIf="r_password && r_password.invalid && r_password.touched"
+            >
+              Please enter password
+            </p>
+          </div>
+          <div>
+            <button
+              class="btn btn-secondary register-button"
+              [attr.disabled]="registerForm.invalid ? true : null"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

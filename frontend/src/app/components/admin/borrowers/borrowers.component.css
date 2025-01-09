@@ -1,0 +1,9 @@
+.table-container{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.status-msg{
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}

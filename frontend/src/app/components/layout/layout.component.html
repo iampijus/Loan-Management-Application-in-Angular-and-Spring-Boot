@@ -1,0 +1,11 @@
+<div *ngIf="role == 'ROLE_ADMIN'; else elseBlock">
+  <app-navbar></app-navbar>
+  <div>
+    <app-home [menu]="adminRoutes"></app-home>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <app-navbar [menu]="userRoutes"></app-navbar>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -1,0 +1,36 @@
+<!-- Banner -->
+<div class="banner">
+  <img
+    src="assets/images/banner.jpg"
+    class="img-fluid rounded banner-img"
+    alt="banner"
+  />
+</div>
+
+<!-- Cards -->
+<h4 class="mt-4 ms-4">Loans</h4>
+<div class="my-4 mx-4">
+  <p class="fs-5">Explore our range of loans designed for your unique needs.</p>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3" *ngFor="let item of loans">
+      <div class="card shadow rounded h-100">
+        <div class="card-body card-content">
+          <h5 class="card-title loan-title">{{ item.type }}</h5>
+          <p class="card-text">
+            {{ item.description }}
+          </p>
+          <div>
+            <button
+              class="apply-button"
+              mat-raised-button
+              color="accent"
+              (click)="navigateToForm(item.type)"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

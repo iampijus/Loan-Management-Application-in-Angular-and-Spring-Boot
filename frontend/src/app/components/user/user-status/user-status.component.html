@@ -1,0 +1,43 @@
+<!-- Bootstrap table -->
+<!-- <div class="loan-status-container">
+  <h6 class="mb-3">Loan Status</h6>
+  <div class="table-responsive">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Type</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.type }}</td>
+          <td>₹{{ item.amount }}</td>
+          <td>
+            <span class="text-success fw-semibold">{{ item.status }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 
+ -->
+
+<!-- Ag grid table -->
+
+<div class="loan-status-container">
+  <h6 class="mb-3">Loan Status</h6>
+  <div>
+    <ag-grid-angular
+      style="width: 100%; height: 73vh"
+      class="ag-theme-alpine"
+      [rowData]="loans"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+    >
+    </ag-grid-angular>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,400;0,500;1,100&display=swap");
+
+/* Desktop view */
+.welcome-msg {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.card-body {
+  color: white;
+}
+.card-borrowers {
+  background-color: rgb(8, 190, 84);
+}
+
+.card-title {
+  font-size: 17px;
+}
+
+.card-body p {
+  font-weight: 500;
+}
+
+/* Tablet view */
+@media (max-width: 990px) {
+  #total-receivable {
+    margin: 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-card {
+    margin: 10px 0;
+  }
+}
+
+/* Moblie view */
+@media (max-width: 500px) {
+  .dashboard-card {
+    margin: 10px 0;
+  }
+}
